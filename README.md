@@ -1,4 +1,4 @@
-# AutoScript
+# Maurice's AutoScript
 
 This is a collection of cloud (Azure/Office 365) and on-premise (Active Directory/Exchange) scripts combined into a framework.
 
