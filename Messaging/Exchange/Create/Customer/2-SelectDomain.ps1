@@ -1,0 +1,17 @@
+Function Messaging-Exchange-Create-Customer-2-SelectDomain {
+    # ============
+    # Declarations
+    # ============
+    $Task = "Select an UPN suffix which corresponds to the accepted mail domain"
+    # =========
+    # Execution
+    # =========
+    Script-Module-SetHeaders -CurrentTask $Task -Name ($MyInvocation.MyCommand).Name
+    Script-Index-Objects -CurrentTask $Task -FunctionName ($MyInvocation.MyCommand).Name -Type "UPNSuffix" -Functie "Selecteren"
+    # ==========
+    # Finalizing
+    # ==========
+    Set-Variable $global:VarHeaderName -Value $CustomerUPNSuffix
+    Set-Variable $global:VarHeaderName -Value ("Write-Host -NoNewLine ('- ' + '$Task' + ': ') -ForegroundColor Gray; Write-Host '" + (Get-Variable -Name $global:VarHeaderName).Value + "' -ForegroundColor Yellow")
+    Invoke-Expression -Command $FunctionTaskNames[[int]$FunctionTaskNames.IndexOf(($MyInvocation.MyCommand).Name) + 1]
+}

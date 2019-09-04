@@ -1,0 +1,1 @@
+powershell.exe -file ..\Start.ps1 "Merge"
