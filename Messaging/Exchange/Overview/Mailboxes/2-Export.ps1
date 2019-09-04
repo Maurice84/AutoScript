@@ -84,7 +84,6 @@ Function Messaging-Exchange-Overview-Mailboxes-2-Export {
                     $TotalColumnsFullAccess = $Count
                 }
             }
-Write-Host "-FullAccess" -ForegroundColor Yellow
         }
         # --------------------------------
         # Indexing the Send As permissions
@@ -100,7 +99,6 @@ Write-Host "-FullAccess" -ForegroundColor Yellow
                     $TotalColumnsSendAs = $Count
                 }
             }
-Write-Host "-SendAs" -ForegroundColor Yellow
         }
         # ---------------------------------------
         # Indexing the Send On Behalf permissions
@@ -116,7 +114,6 @@ Write-Host "-SendAs" -ForegroundColor Yellow
                     $TotalColumnsSendOnBehalf = $Count
                 }
             }
-Write-Host "-SendOnBehalf" -ForegroundColor Yellow
         }
         # -------------------------------
         # Indexing forwarding address(es)
@@ -124,11 +121,9 @@ Write-Host "-SendOnBehalf" -ForegroundColor Yellow
         $Count = 0
         If ($Mailbox.ForwardingAddress) {
             $ExtraColumnForwardingAddress = ',"ForwardingAddress"'
-Write-Host "-ForwardingAddress" -ForegroundColor Yellow
         }
         If ($Mailbox.DeliverToMailboxAndForward) {
             $ExtraColumnDeliverToMailboxAndForward = ',"DeliverToMailboxAndForward"'
-Write-Host "-DeliverToMailboxAndForward" -ForegroundColor Yellow
         }
     }
     # ---------------------------------------------------

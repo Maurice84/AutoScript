@@ -1,5 +1,4 @@
 Function Script-Module-Initial-3-SetFTP {
-<#
     If (Test-Connection 192.168.0.250 -Count 1 -ErrorAction SilentlyContinue) {
         $global:URL = "ftp://192.168.0.250/Web/"
     } Else {
@@ -10,5 +9,4 @@ Function Script-Module-Initial-3-SetFTP {
     $global:Credentials = New-Object System.Net.NetworkCredential($User, $Pass)
     $global:WebClient = New-Object System.Net.WebClient 
     $global:WebClient.Credentials = New-Object System.Net.NetworkCredential($User, $Pass)
-#>
 }
