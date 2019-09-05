@@ -864,9 +864,9 @@
     }
     If ($Type -like "Office365*") {
         If ($Type -like "Office365Account*") {
-            Write-Host; Write-Host -NoNewLine "Indexing Office 365 licenties..."
+            Write-Host; Write-Host -NoNewLine "Indexing Azure AD licenses..."
             $AzureADSubscribedSku = Get-AzureADSubscribedSku
-            Write-Host; Write-Host -NoNewLine "Indexing Office 365 accounts..."
+            Write-Host; Write-Host -NoNewLine "Indexing Azure AD accounts..."
             $Objects = Get-AzureADUser -All $True
         }
         If ($Type -eq "Office365Licenties") {

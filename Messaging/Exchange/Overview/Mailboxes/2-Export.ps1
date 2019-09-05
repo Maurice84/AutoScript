@@ -289,7 +289,7 @@ Function Messaging-Exchange-Overview-Mailboxes-2-Export {
     Script-Convert-CSV-to-Excel -File $FileCSVM -Category "Mailboxen" # -Silent $true
     $FileExcel = $FileCSVM.Substring(0, $FileCSVM.Length - 4) + ".xlsx"
     If (Test-Path $FileExcel) {
-        Write-Host -NoNewLine " - OK: Successfully converted the CSV-file to Excel-file:"; Write-Host $FileExcel.Split('\')[-1] -ForegroundColor Yellow
+        Write-Host -NoNewLine " - OK: Successfully converted the CSV-file to Excel-file: "; Write-Host $FileExcel -ForegroundColor Yellow
     }
     Else {
         Write-Host " - ERROR: Could not convert the CSV-file to Excel-file, please investigate!" -ForegroundColor Red
