@@ -141,6 +141,9 @@ Function Script-Module-ImportMicrosoft {
             }
             Switch ($Choice) {
                 "Y" {
+                    Script-Module-ImportMicrosoft -Name ($MyInvocation.MyCommand).Name -Module "CredentialManager"
+                    Script-Module-ImportMicrosoft -Name ($MyInvocation.MyCommand).Name -Module "AzureAD"
+                    Script-Module-ImportMicrosoft -Name ($MyInvocation.MyCommand).Name -Module "MSOnline"
                     Script-Connect-Office365 -Module "AzureAD"
                     Script-Connect-Office365 -Module "ExchangeOnline"
                 }
@@ -417,7 +420,7 @@ Function Script-Module-ImportMicrosoft {
                     }
                     Else {
                         Do {
-                            Write-Host -NoNewLine "  > The MSOnline PowerShell module is not present. Would you like to install this? (Y/N):" -ForegroundColor Yellow
+                            Write-Host -NoNewLine "  > The MSOnline PowerShell module is not present. Would you like to install this? (Y/N): " -ForegroundColor Yellow
                             [string]$Choice = Read-Host
                             $Input = @("Y", "N") -contains $Choice
                             If (!$Input) {
